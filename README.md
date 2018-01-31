@@ -1,0 +1,2 @@
+# pyskeleton
+Skeleton Python project
