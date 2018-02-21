@@ -25,5 +25,5 @@ install: "python setup.py install"
 
 # run tests
 script:
-    "python -m pytest -v -c setup.cfg"
+    "python -m pytest -v"
 
