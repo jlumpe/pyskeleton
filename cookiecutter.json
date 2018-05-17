@@ -1,0 +1,11 @@
+{
+	"author": "Jared Lumpe",
+	"author_email": "author@example.com",
+	"project_name": "Python Skeleton Package",
+	"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+	"package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+	"project_short_description": "Base template for a Python package.",
+	"version": "0.1",
+	"github_username": "jlumpe",
+	"project_url": "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}"
+}

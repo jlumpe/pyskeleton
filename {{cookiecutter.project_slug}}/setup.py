@@ -1,4 +1,4 @@
-"""Setuptools installation script for <package_name> package.
+"""Setuptools installation script for {{ cookiecutter.project_name }} package.
 
 Most options set in setup.cfg (requires setuptools 30.3 or above).
 """
@@ -7,18 +7,12 @@ from setuptools import setup, __version__ as setuptools_v_str
 
 
 metadata = dict(
-	name='mypackage',  # UPDATE THIS!
-	version='0.1',
-	description='',
-
-	author='Jared Lumpe',
-	author_email='jared.lumpe@ucsf.edu',
-	maintainer='Jared Lumpe',
-	maintainer_email='jared.lumpe@ucsf.edu',
-
-	# url='',
-	# download_url='',
-	# project_urls='',
+	name='{{ cookiecutter.project_slug }}',
+	version='{{ cookiecutter.version }}',
+	description='{{ cookiecutter.project_short_description }}',
+	author='{{ cookiecutter.author }}',
+	author_email='{{ cookiecutter.author_email }}',
+	url='{{ cookiecutter.project_url }}',
 
 	# classifiers='',
 	# license='',
