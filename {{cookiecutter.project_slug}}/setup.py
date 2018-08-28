@@ -1,11 +1,23 @@
 """Setuptools installation script for {{ cookiecutter.project_name }} package."""
 
 from setuptools import setup
+import re
 
 
 # Get contents of README file
 with open('README.md') as fh:
 	readme_contents = fh.read()
+
+
+# Read version from root module __init__.py
+with open('{{ cookiecutter.package_name }}/__init__.py') as fh:
+	init_contents = fh.read()
+	version_match = re.search('^__version__ = ["\']([^"\']+)["\']', init_contents, re.M)
+
+	if not version_match:
+		raise RuntimeError('Unable to get version string')
+
+	version = version_match.group(1)
 
 
 requirements = [
@@ -18,7 +30,7 @@ test_requirements = ['pytest']
 
 setup(
 	name='{{ cookiecutter.project_slug }}',
-	version='{{ cookiecutter.version }}',
+	version=version,
 	description='{{ cookiecutter.project_short_description }}',
 	long_description=readme_contents,
 	author='{{ cookiecutter.author }}',
