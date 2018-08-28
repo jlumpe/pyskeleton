@@ -27,7 +27,7 @@ setup(
 	python_requires='>=3.5',
 	install_requires=requirements,
 	setup_requires=setup_requirements,
-	test_requires=test_requirements,
+	tests_require=test_requirements,
 	include_package_data=True,
 	# license='',
 	# classifiers='',
