@@ -1,3 +1,4 @@
+{% raw %}
 name: CI
 
 on:
@@ -35,3 +36,4 @@ jobs:
         PY_IGNORE_IMPORTMISMATCH: 1
       run: |
         pytest
+{% endraw %}
