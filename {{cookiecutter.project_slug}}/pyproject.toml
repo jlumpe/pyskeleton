@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+authors = [
+  {name = "{{ cookiecutter.author }}", email = "{{ cookiecutter.author_email }}"},
+]
+description = "{{ cookiecutter.project_short_description }}"
+readme = "README.md"
+
+# Get version number dynamically (see [tool.setuptools.dynamic])
+dynamic = ["version", "readme"]
+
+
+requires-python = ">={{ cookiecutter.min_python }}"
+dependencies = [
+]
+
+
+[project.optional-dependencies]
+# cli = ["click"]
+
+
+[project.urls]
+Homepage = "{{ cookiecutter.project_url }}"
+# Repository = "{{ cookiecutter.project_url }}"
+
+
+[project.scripts]
+# my-cli = "{{ cookiecutter.package_name }}:cli"
+
+
+[tool.setuptools.dynamic]
+# Set version from __version__ var in {{ cookiecutter.package_name }}.__init__.py.
+# See https://packaging.python.org/en/latest/discussions/single-source-version
+version = {attr = "{{ cookiecutter.package_name }}.__version__"}
+
+
+
+# Pytest settings
+[tool.pytest.ini_options]
+
+# Run tests in tests/, obviously
+# Also check docstrings in package
+testpaths = [
+	"tests",
+	"{{ cookiecutter.package_name }}",
+]
+
+# Run doctests on all modules
+addopts = "--doctest-modules"
+doctest_optionflags = "NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
+
