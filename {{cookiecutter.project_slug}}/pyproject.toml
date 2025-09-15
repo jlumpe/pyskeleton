@@ -12,7 +12,7 @@ description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
 
 # Get version number dynamically (see [tool.setuptools.dynamic])
-dynamic = ["version", "readme"]
+dynamic = ["version"]
 
 
 requires-python = ">={{ cookiecutter.min_python }}"
